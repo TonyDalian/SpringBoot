@@ -48,6 +48,23 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- 
+			The spring-configuration-metadata.json file. 
+			This file is created at build-time by the spring-boot-configuration-processor 
+			which is a Java Annotation Processor. 
+			We have to add this processor to our project and make sure it is executed during project builds. 
+			
+			Now that the annotation processor has been activated, 
+			any future changes to your GreetingProperties class will trigger an automatic update of the json metadata. 
+			You can try it out by adding some extra properties, or renaming your greeting property to something else. 
+			Warnings will appear / disappear as appropriate. 
+			If you are curious where your metadata file is, you can find it in target/classes/META-INF.
+		-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
