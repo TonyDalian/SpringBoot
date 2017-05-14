@@ -17,7 +17,7 @@
 	* > Read properties from __application.properties__ whose prefix is __greeting__
 	
 * @Configuration	
-	* > Same as __<beans>...<beans>__ in spring XML configuration
+	* > Same as __beans...\beans__ in spring XML configuration
 	
 * @Bean
 	* > @Bean is used to explicitly declare a single bean, rather than letting Spring do it automatically as above. It decouples the declaration of the bean from the class definition, and lets you create and configure beans exactly how you choose.
