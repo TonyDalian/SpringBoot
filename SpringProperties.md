@@ -6,3 +6,6 @@
 	
 * @ConfigurationProperties("greeting")
 	* > Read properties from __application.properties__ whose prefix is __greeting__
+	
+* @PropertySource({"classpath:site-jdbc.properties", "classpath:site-social.properties"})
+	* > Load properties from files

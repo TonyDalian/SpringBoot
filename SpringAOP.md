@@ -1,5 +1,7 @@
 ## Spring AOP
 
+* @EnableAspectJAutoProxy
+
 * @Aspect
 
 * @Pointcut
