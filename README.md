@@ -1,6 +1,6 @@
 # Spring Annotation
 
-## Bean Injection
+## Spring Core 
 * @Autowired
 	* > for bean injection
 	* > byType injection
@@ -29,11 +29,12 @@
 	* > @Controller
 
 
-	
+## Restful Webservice	
 * @RestController
 * @RequestMapping
 * @RequestParam
 
+## Spring Boot
 * @SpringBootApplication
 	* > @Configuration
 	* > @EnableAutoConfiguration
