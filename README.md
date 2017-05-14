@@ -1,6 +1,6 @@
-#Spring Annotation
+# Spring Annotation
 
-##Bean Injection
+## Bean Injection
 * @Autowired
 	> for bean injection
 	> byType injection
