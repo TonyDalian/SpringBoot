@@ -1,9 +1,9 @@
-#Spring Annotation
+# Spring Annotation
 
-##Bean Injection
+## Bean Injection
 * @Autowired
-	> for bean injection
-	> byType injection
+	* > for bean injection
+	* > byType injection
 
 * @Resource
 	> for bean injection
