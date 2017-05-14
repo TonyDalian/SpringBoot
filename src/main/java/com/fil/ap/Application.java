@@ -2,6 +2,7 @@ package com.fil.ap;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
  * @SpringBootApplication is a convenience annotation that adds all of the following:
@@ -20,6 +21,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *	Build runnable Jar: ./mvnw clean package
  */
 @SpringBootApplication
+@EnableAspectJAutoProxy
 public class Application {
 
 	public static void main(String[] args) {
