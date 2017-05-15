@@ -1,14 +1,25 @@
 ## Spring Core Annotation
+* @ComponentScan(basePackages = { "com.apress.prospringmvc.bookstore.web" }) 
+	* > Tell Spring under which package, beans should be scanned into container	
+	
+* @Import(CDConfig.class)
+	* > Import configuration from config class
+
+* @ImportResource("classpath:cons-injec.xml") 
+	* > Import configuration from XML file
+	
 * @Autowired
 	* > for bean injection
 	* > byType injection
 
 * @Resource
-	* > for bean injection
+	* > for bean injection on variable & setter method
+	* > variable must exist
 	* > byName injection
 
 * @Qualifier
-	* > for bean byType injection
+	* > for bean byType injection on variable & setter method
+	* > on setter method is recommended
 	* > specify bean name to be injected		
 
 * @Configuration	
