@@ -11,18 +11,19 @@
 	* > Load properties from files
 	* > Properties are loaded into Spring Environment bean
 	* > Properties can also be loaded into PropertySourcesPlaceholderConfigurer for ${…} placeholder
-	```java
-		@Configuration
-		@ComponentScan(basePackages = "com.websystique.spring")
-		@PropertySource(value = { "classpath:application.properties" })
-		public class AppConfig {		 
-		    /*
-		     * PropertySourcesPlaceHolderConfigurer Bean only required for @Value("{}") annotations.
-		     * Remove this bean if you are not using @Value annotations for injecting properties.
-		     */
-		    @Bean
-		    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
-		        return new PropertySourcesPlaceholderConfigurer();
-		    }
-		}
-	```
+	* > 
+		```java
+			@Configuration
+			@ComponentScan(basePackages = "com.websystique.spring")
+			@PropertySource(value = { "classpath:application.properties" })
+			public class AppConfig {		 
+			    /*
+			     * PropertySourcesPlaceHolderConfigurer Bean only required for @Value("{}") annotations.
+			     * Remove this bean if you are not using @Value annotations for injecting properties.
+			     */
+			    @Bean
+			    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+			        return new PropertySourcesPlaceholderConfigurer();
+			    }
+			}
+		```
