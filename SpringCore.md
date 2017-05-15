@@ -42,6 +42,23 @@
 		
 * @Component
 	* > @Component (and @Service and @Repository) are used to auto-detect and auto-configure beans using classpath scanning. There's an implicit one-to-one mapping between the annotated class and the bean (i.e. one bean per class). Control of wiring is quite limited with this approach, since it's purely declarative.
-	* > @Service
-	* > @Repository
-	* > @Controller
+	
+* @Service
+	
+* @Repository
+	
+* @Controller
+
+* @Conditional(WindowsCondition.class)
+	* > Create bean when condition is satisfied
+	* > Put @Conditional on class which has @Component (Having @Configuration)
+	* > Put @Conditional on method which has @Bean
+	* > 
+		```java
+			public class WindowsCondition implements Condition {
+			    @Override
+			    public boolean matches(ConditionContext conditionContext, AnnotatedTypeMetadata annotatedTypeMetadata) {
+			        return conditionContext.getEnvironment().getProperty("os.name").contains("Windows");
+			    }
+			}
+		```
