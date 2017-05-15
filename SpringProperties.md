@@ -11,7 +11,7 @@
 	* > Load properties from files
 	* > Properties are loaded into Spring Environment bean
 	* > Properties can also be loaded into PropertySourcesPlaceholderConfigurer for ${…} placeholder
-	'''java
+	```java
 		@Configuration
 		@ComponentScan(basePackages = "com.websystique.spring")
 		@PropertySource(value = { "classpath:application.properties" })
@@ -25,4 +25,4 @@
 		        return new PropertySourcesPlaceholderConfigurer();
 		    }
 		}
-	'''
+	```

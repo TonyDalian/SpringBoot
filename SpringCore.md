@@ -9,17 +9,17 @@
 	* > Import configuration from XML file
 	
 * @Autowired
-	* > for bean injection
+	* > for bean injection on variable & setter method
+	* > variable must exist
 	* > byType injection
 
 * @Resource
 	* > for bean injection on variable & setter method
-	* > variable must exist
+	* > on setter method is recommended
 	* > byName injection
 
 * @Qualifier
-	* > for bean byType injection on variable & setter method
-	* > on setter method is recommended
+	* > for bean byType injection @Autowired	
 	* > specify bean name to be injected		
 
 * @Configuration	
