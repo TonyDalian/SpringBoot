@@ -1,4 +1,5 @@
-## Spring Core Annotation
+## Spring Core
+
 * @ComponentScan(basePackages = { "com.apress.prospringmvc.bookstore.web" }) 
 	* > Tell Spring under which package, beans should be scanned into container	
 	
