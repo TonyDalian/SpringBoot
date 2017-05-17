@@ -1,4 +1,5 @@
 ## Spring Boot
+
 * @SpringBootApplication
 	* > @Configuration
 	* > @EnableAutoConfiguration
