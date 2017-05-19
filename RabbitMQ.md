@@ -12,7 +12,7 @@
 		
 * RabbitMQ Architecture
 	* > 通常我们谈到队列服务, 会有三个概念： 发消息者、队列、收消息者，RabbitMQ 在这个基本概念之上, 多做了一层抽象, 在发消息者和 队列之间, 加入了交换器 (Exchange). 这样发消息者和队列就没有直接联系, 转而变成发消息者把消息给交换器, 交换器根据调度策略再把消息再给队列。
-	
+	* > ![RabbitMQ Architecture](https://github.com/sam0411/SpringBoot/blob/master/src/main/resources/static/images/rabbitMQ_Arch.png)
 	
 	
 * Installation
