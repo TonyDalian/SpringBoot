@@ -13,7 +13,16 @@
 * RabbitMQ Architecture
 	* > 通常我们谈到队列服务, 会有三个概念： 发消息者、队列、收消息者，RabbitMQ 在这个基本概念之上, 多做了一层抽象, 在发消息者和 队列之间, 加入了交换器 (Exchange). 这样发消息者和队列就没有直接联系, 转而变成发消息者把消息给交换器, 交换器根据调度策略再把消息再给队列。
 	* > ![RabbitMQ Architecture](https://github.com/sam0411/SpringBoot/blob/master/src/main/resources/static/images/rabbitMQ_Arch.png)
-	
+		* >> 左侧 P 代表 生产者，也就是往 RabbitMQ 发消息的程序。
+		* >> 中间即是 RabbitMQ，其中包括了 交换机 和 队列。
+		* >> 右侧 C 代表 消费者，也就是往 RabbitMQ 拿消息的程序。
+		* >> 虚拟主机：一个虚拟主机持有一组交换机、队列和绑定。为什么需要多个虚拟主机呢？很简单，RabbitMQ当中，用户只能在虚拟主机的粒度进行权限控制。 因此，如果需要禁止A组访问B组的交换机/队列/绑定，必须为A和B分别创建一个虚拟主机。每一个RabbitMQ服务器都有一个默认的虚拟主机“/”。
+		* >> 交换机：Exchange 用于转发消息，但是它不会做存储 ，如果没有 Queue bind 到 Exchange 的话，它会直接丢弃掉 Producer 发送过来的消息。这里有一个比较重要的概念：路由键 。消息到交换机的时候，交互机会转发到对应的队列中，那么究竟转发到哪个队列，就要根据该路由键。
+			* >>>Direct：direct 类型的行为是"先匹配, 再投送". 即在绑定时设定一个 routing_key, 消息的routing_key 匹配时, 才会被交换器投送到绑定的队列中去.交换机有四种类型：Direct, topic, Headers and Fanout.
+			* >>>Topic：按规则转发消息（最灵活）
+			* >>>Headers：设置header attribute参数类型的交换机
+			* >>>Fanout：转发消息到所有绑定队列
+		* >> 绑定：也就是交换机需要和队列相绑定，这其中如上图所示，是多对多的关系。
 	
 * Installation
 	* > apt-get install rabbitmq-server 
