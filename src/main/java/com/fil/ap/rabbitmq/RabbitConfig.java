@@ -14,7 +14,7 @@ public class RabbitConfig {
     }
 
     @Bean
-    public Queue UserQueue() {
+    public Queue UserpassQueue() {
     	
         return new Queue("userpasswordQueue");
     }
