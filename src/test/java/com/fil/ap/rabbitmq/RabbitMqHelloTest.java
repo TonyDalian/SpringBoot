@@ -11,11 +11,38 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class RabbitMqHelloTest {
 
     @Autowired
-    private HelloSender helloSender;
+    private HelloSender1 helloSender1;
 
+    @Autowired
+    private HelloSender2 helloSender2;
+    
     @Test
     public void hello() throws Exception {
-        helloSender.send();
+    	
+    	new Thread(new Runnable() {
+
+            public void run() {
+            	
+            	helloSender1.send();
+            }
+    	}).start();
+    	
+    	new Thread(new Runnable() {
+
+            public void run() {
+            	
+            	helloSender2.send();
+            }
+    	}).start();
+        
+        
+        
+        try {
+        	Thread.sleep(5000);
+        } catch(Exception e) {
+        	
+        	e.printStackTrace();
+        }
     }
 
 }

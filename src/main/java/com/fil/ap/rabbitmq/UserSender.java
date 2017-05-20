@@ -1,22 +1,22 @@
 package com.fil.ap.rabbitmq;
 
-import java.util.Date;
-
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.fil.ap.rabbitmq.pojo.User;
+
 @Component
-public class HelloSender {
+public class UserSender {
 
     @Autowired
     private AmqpTemplate rabbitTemplate;
 
     public void send() {
+
+    	User user = new User("Alex", "Testing1234");
     	
-        String context = "hello " + new Date();
-        System.out.println("Sender : " + context);
-        this.rabbitTemplate.convertAndSend("hello", context);
+    	this.rabbitTemplate.convertAndSend("userpasswordQueue", user);
     }
 
 }
