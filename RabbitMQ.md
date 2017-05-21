@@ -18,10 +18,14 @@
 		* >> 右侧 C 代表 消费者，也就是往 RabbitMQ 拿消息的程序。
 		* >> 虚拟主机：一个虚拟主机持有一组交换机、队列和绑定。为什么需要多个虚拟主机呢？很简单，RabbitMQ当中，用户只能在虚拟主机的粒度进行权限控制。 因此，如果需要禁止A组访问B组的交换机/队列/绑定，必须为A和B分别创建一个虚拟主机。每一个RabbitMQ服务器都有一个默认的虚拟主机“/”。
 		* >> 交换机：Exchange 用于转发消息，但是它不会做存储 ，如果没有 Queue bind 到 Exchange 的话，它会直接丢弃掉 Producer 发送过来的消息。这里有一个比较重要的概念：路由键 。消息到交换机的时候，交互机会转发到对应的队列中，那么究竟转发到哪个队列，就要根据该路由键。交换机有四种类型：Direct, topic, Headers and Fanout.
-			* >>>Direct：direct 类型的行为是"先匹配, 再投送". 即在绑定时设定一个 routing_key, 消息的routing_key 匹配时, 才会被交换器投送到绑定的队列中去.
-			* >>>Topic：按规则转发消息（最灵活）
-			* >>>Headers：设置header attribute参数类型的交换机
-			* >>>Fanout：转发消息到所有绑定队列
+			* >>> Direct：direct 类型的行为是"先匹配, 再投送". 即在绑定时设定一个 routing_key, 消息的routing_key 匹配时, 才会被交换器投送到绑定的队列中去.
+			* >>> Topic：按规则转发消息（最灵活）
+			* >>> Headers：设置header attribute参数类型的交换机
+				* >>>> fanout，direct，topic exchange的routingKey都需要要字符串形式的，而headers exchange则没有这个要求，因为键值对的值可以是任何类型。
+				* >>>> 在做绑定的时候有两种匹配方式供选择。x-match (all/any)意思就是键值对中所有的项都要匹配与只要有一个匹配就可以。
+			* >>> Fanout：转发消息到所有绑定队列
+				* >>>> Fanout 就是我们熟悉的广播模式或者订阅模式，给Fanout交换机发送消息，绑定了这个交换机的所有队列都收到这个消息。
+				* >>>> 发送端的routing_key写任何字符都会被忽略.
 		* >> 绑定：也就是交换机需要和队列相绑定，这其中如上图所示，是多对多的关系。
 	
 * Installation

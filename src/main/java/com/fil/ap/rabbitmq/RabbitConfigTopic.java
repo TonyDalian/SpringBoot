@@ -8,19 +8,19 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class TopicRabbitConfig {
+public class RabbitConfigTopic {
 
     final static String message = "topic.message";
     final static String messages = "topic.messages";
 
     @Bean
     public Queue queueMessage() {
-        return new Queue(TopicRabbitConfig.message);
+        return new Queue(RabbitConfigTopic.message);
     }
 
     @Bean
     public Queue queueMessages() {
-        return new Queue(TopicRabbitConfig.messages);
+        return new Queue(RabbitConfigTopic.messages);
     }
 
     @Bean
