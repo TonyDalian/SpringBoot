@@ -30,7 +30,7 @@ public class Swagger2Config {
     	
         return new ApiInfoBuilder()
                 .title("API Document of HK DC Common API")
-                .contact(new Contact("Alex Lou", "http://www.fidelity.com.hk", "alex.lou@fil.com"))
+                .contact(new Contact("Alex Lou", "http://www.163.com", "alex.lou@yeah.com"))
                 .version("1.0")
                 .description("API Document of HK DC Common API - Input & Output")
                 .build();
