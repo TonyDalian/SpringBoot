@@ -25,10 +25,7 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
@@ -37,6 +34,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+		<dependency>  
+		    <groupId>org.springframework.boot</groupId>  
+		    <artifactId>spring-boot-starter-security</artifactId>  
+		</dependency> 
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -60,6 +62,18 @@
 			<scope>test</scope>
 		</dependency>
 
+	<!-- spring admin client actuator -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>  
+		    <groupId>de.codecentric</groupId>  
+		    <artifactId>spring-boot-admin-starter-client</artifactId>  
+		    <version>1.5.2</version>
+		</dependency>  
+
+        
 	<!-- Feige restful client  -->
 		<dependency>
 			<groupId>com.netflix.feign</groupId>
