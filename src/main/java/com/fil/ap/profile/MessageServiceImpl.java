@@ -1,17 +1,15 @@
 package com.fil.ap.profile;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
-@Profile({ "sit" })
-public class MessageServiceSIT implements MessageService {
-
-	@Value("${name:WorldSIT}")
+public class MessageServiceImpl implements MessageService {
+	
+	@Value("${name}")
 	private String name;
 
-	@Value("${greeting.greeting:Greeting}")
+	@Value("${greeting.greeting}")
 	private String greeting;
 	
 	public String getMessage() {

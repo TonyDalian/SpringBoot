@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fil.ap.restful.config.GreetingProperties;
 import com.fil.ap.restful.pojo.Greeting;
 
-@Profile({ "uat" })
 @RestController
+@Profile({ "uat" })
 public class GreetingController {
 
     private static final String template = "Hello, %s!";

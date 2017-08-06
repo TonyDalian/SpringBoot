@@ -32,7 +32,7 @@ import org.springframework.test.web.servlet.MockMvc;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-@ActiveProfiles(profiles = {"sit"})
+@ActiveProfiles(profiles = {"uat"})
 public class GreetingControllerTests {
 
     @Autowired
