@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 import com.fil.ap.rabbitmq.pojo.User;
 
-@Component
+//@Component
 public class UserSender {
 
     @Autowired

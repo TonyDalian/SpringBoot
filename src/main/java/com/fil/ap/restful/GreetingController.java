@@ -3,6 +3,7 @@ package com.fil.ap.restful;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fil.ap.restful.config.GreetingProperties;
 import com.fil.ap.restful.pojo.Greeting;
 
+@Profile({ "uat" })
 @RestController
 public class GreetingController {
 

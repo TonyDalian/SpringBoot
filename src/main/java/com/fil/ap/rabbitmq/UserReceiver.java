@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 
 import com.fil.ap.rabbitmq.pojo.User;
 
-@Component
-@RabbitListener(queues = "userpasswordQueue")
+//@Component
+//@RabbitListener(queues = "userpasswordQueue")
 public class UserReceiver {
 
 	private final AtomicInteger counter = new AtomicInteger();
