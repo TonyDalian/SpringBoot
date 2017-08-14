@@ -35,8 +35,11 @@ public class GreetingController {
     public Greeting greetingProperties(
     		@RequestParam(value="name", defaultValue="World") String name
     		) {
+    	
+    	long ct = counter.incrementAndGet();
+    	System.out.println(ct + "---" + name);
         return new Greeting(
-        		counter.incrementAndGet(),
+        		ct,
         		props.getGreeting()+name
         );
     }

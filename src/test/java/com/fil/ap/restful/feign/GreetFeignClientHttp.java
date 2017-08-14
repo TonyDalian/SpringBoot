@@ -36,7 +36,7 @@ public class GreetFeignClientHttp implements GreetingFeign {
 		        .decoder(new JacksonDecoder())
 		        .target(GreetingFeign.class, url);
 		
-		Greeting greeting = greetingResource.getGreetingProperty("Terry");
+		Greeting greeting = greetingResource.getGreetingProperty(name);
 		
 		return greeting;
 	}
